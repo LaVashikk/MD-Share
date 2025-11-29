@@ -1,0 +1,37 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>MdShare - New Paste</title>
+            <style>{styles}</style>
+        </head>
+        <body>
+            <main>
+                <h1>MdShare</h1>
+                <p>Paste your Markdown text below and get a shareable link.</p>
+                <form action="/" method="post">
+                    <textarea name="content" required placeholder="\#\# Your Markdown here..."></textarea>
+                    <div class="options">
+                        <div class="option_group">
+                            <label for="expiration">Expires after:</label>
+                            <select name="expiration" id="expiration">
+                                <option value="never" selected>Never</option>
+                                <option value="10m">10 Minutes</option>
+                                <option value="1h">1 Hour</option>
+                                <option value="1d">1 Day</option>
+                                <option value="1w">1 Week</option>
+                            </select>
+                        </div>
+                        <div class="option_group">
+                            <label for="max_views">Max views:</label>
+                            <input type="number" name="max_views" id="max_views" min="1" placeholder="Unlimited" class="number-input">
+                        </div>
+                    </div>
+                    <button type="submit">Create Link</button>
+                </form>
+            </main>
+        </body>
+        </html>
+    

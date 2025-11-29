@@ -1,0 +1,30 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>MdShare - View Paste</title>
+            <style>{styles}</style>
+        </head>
+        <body>
+            <main>
+                <div class="paste-header">
+                    <button class="copy-button" onclick="copyMarkdown()">Copy Markdown</button>
+                </div>
+                {body}
+            </main>
+            <div id="raw-markdown" style="display:none;">{raw_content}</div>
+            <script>
+                function copyMarkdown() {{
+                    const rawContent = document.getElementById('raw-markdown').textContent;
+                    navigator.clipboard.writeText(rawContent).then(() => {{
+                        alert('Markdown copied to clipboard!');
+                    }}, () => {{
+                        alert('Failed to copy markdown.');
+                    }});
+                }}
+            </script>
+        </body>
+        </html>
+    
